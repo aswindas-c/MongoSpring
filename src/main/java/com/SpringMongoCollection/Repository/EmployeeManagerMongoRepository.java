@@ -85,7 +85,7 @@ public class EmployeeManagerMongoRepository implements EmployeeManagerRepository
     public Integer findMaxId() {
         GroupOperation groupById = Aggregation.group().max("_id").as("maxId");
         Aggregation aggregation = Aggregation.newAggregation(groupById);
-        AggregationResults<MaxIdResult> results = mongoTemplate.aggregate(aggregation, "employeeManager", MaxIdResult.class);
+        AggregationResults<MaxIdResult> results = mongoTemplate.aggregate(aggregation, "Employee", MaxIdResult.class);
         MaxIdResult maxIdResult = results.getUniqueMappedResult();
         return maxIdResult != null ? maxIdResult.getMaxId() : null;
     }

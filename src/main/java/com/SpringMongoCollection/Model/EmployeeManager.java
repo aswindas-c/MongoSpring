@@ -9,8 +9,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-//@Document(collection = "trial")
-@Document
+//@Document(collection = "Test")
+@Document(collection = "Employee")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

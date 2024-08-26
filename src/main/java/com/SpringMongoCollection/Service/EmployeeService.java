@@ -109,7 +109,7 @@ public class EmployeeService {
                 !"QA".equalsIgnoreCase(department) &&
                 !"engineering".equalsIgnoreCase(department) &&
                 !"BA".equalsIgnoreCase(department)) {
-            errors.add("Invalid department. Must be one of: sales, delivery, QA, engineering, BA.");
+            errors.add("Invalid department. Must be one of: sales,delivery,QA,engineering,BA.");
         }
      
         if (!isValidEmail(email)) {
