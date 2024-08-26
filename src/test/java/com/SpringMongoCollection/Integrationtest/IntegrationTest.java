@@ -9,6 +9,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
@@ -20,7 +21,7 @@ import java.time.Instant;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-//@TestPropertySource(locations = "classpath:applicationtest.properties")
+@TestPropertySource(locations = "classpath:application-test.properties")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class IntegrationTest {
@@ -374,6 +375,6 @@ public class IntegrationTest {
 
     @AfterAll
     void tearDown() {
-        mongoTemplate.dropCollection("Test");
+        mongoTemplate.dropCollection("employeeManage");
     }
 }
